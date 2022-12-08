@@ -13,7 +13,7 @@
       <h1>Library</h1>
     </header>
     <section class="libraryContainer">
-      <button class="addBook">+Add book</button>
+      <button type="button" class="addBook">+Add book</button>
     </section>
     <footer>
       <p>
@@ -39,7 +39,7 @@
           class="author"
           placeholder="Author"
           required
-          minlength="8"
+          minlength="2"
           maxlength="20"
         />
         <input
@@ -51,9 +51,13 @@
           maxlength="9999"
         />
         <label for="readCheck">
-          Have you read it?<input type="checkbox" id="readCheck" />
+          Have you read it?<input
+            type="checkbox"
+            id="readCheck"
+            name="readCheck"
+          />
         </label>
-        <button type="submit">Submit</button>
+        <button type="button" class="addBookToLibrary">Submit</button>
       </form>
     </div>
   </body>
