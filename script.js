@@ -16,6 +16,7 @@ function Book(author, title, pages, read) {
   this.read = read;
 }
 
+//Get values from user input to create new book
 function getUserBook() {
   let title = document.querySelector(".title").value;
   let author = document.querySelector(".author").value;
@@ -26,8 +27,10 @@ function getUserBook() {
     return;
   }
   myLibrary.push((newUserBook = new Book(author, title, pages, read)));
+  createNewBook(newUserBook);
 }
 
+//Reset book input menu
 function resetInput() {
   newBookInput.style.display = "none";
   let title = (document.querySelector(".title").value = "");
@@ -43,6 +46,7 @@ function createNewBook(book) {
   let pages = document.createElement("p");
   let readToggle = document.createElement("button");
   let remove = document.createElement("button");
+  let read = document.getElementById("readCheck").checked;
 
   bookDiv.classList.add("bookDiv");
   title.classList.add("cardText");
@@ -54,11 +58,12 @@ function createNewBook(book) {
   title.textContent = `"${book.title}"`;
   author.textContent = book.author;
   pages.textContent = `${book.pages} pages`;
+  remove.textContent = "Remove";
 
-  if (read.checked === true) {
+  if (read === true) {
     readToggle.textContent = "Read";
     readToggle.style.backgroundColor = "green";
-  } else {
+  } else if (read === false) {
     readToggle.textContent = "Not read";
     readToggle.style.backgroundColor = "red";
   }
