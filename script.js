@@ -68,6 +68,18 @@ function createNewBook(book) {
     readToggle.style.backgroundColor = "red";
   }
 
+  readToggle.addEventListener("click", function () {
+    if (read === true) {
+      readToggle.textContent = "Not read";
+      readToggle.style.backgroundColor = "red";
+      read = false;
+    } else if (read === false) {
+      readToggle.textContent = "Read";
+      readToggle.style.backgroundColor = "green";
+      read = true;
+    }
+  });
+
   bookDiv.appendChild(title);
   bookDiv.appendChild(author);
   bookDiv.appendChild(pages);
