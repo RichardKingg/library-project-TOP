@@ -21,7 +21,18 @@ function getUserBook() {
   let author = document.querySelector(".author").value;
   let pages = document.querySelector(".pages").value;
   let read = document.getElementById("readCheck").checked;
-  return myLibrary.push((newUserBook = new Book(author, title, pages, read)));
+  if (title === "" || author === "" || pages === "") {
+    alert("Please fill out the form before submitting");
+    return;
+  }
+  myLibrary.push((newUserBook = new Book(author, title, pages, read)));
+}
+
+function resetInput() {
+  newBookInput.style.display = "none";
+  let title = (document.querySelector(".title").value = "");
+  let author = (document.querySelector(".author").value = "");
+  let pages = (document.querySelector(".pages").value = "");
 }
 
 //Creates a new book and adds it to the library container
@@ -69,4 +80,7 @@ function addBookInput() {
 bookBtn.addEventListener("click", addBookInput);
 
 //When submit is clicked, add new book to library
-createBookCard.addEventListener("click", getUserBook);
+createBookCard.addEventListener("mousedown", getUserBook);
+
+//Resets inputs
+createBookCard.addEventListener("mouseup", resetInput);
