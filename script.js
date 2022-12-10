@@ -69,14 +69,14 @@ function createNewBook(book) {
   }
 
   readToggle.addEventListener("click", function () {
-    if (read === true) {
+    if (book.read === true) {
       readToggle.textContent = "Not read";
       readToggle.style.backgroundColor = "red";
-      read = false;
-    } else if (read === false) {
+      book.read = false;
+    } else if (book.read === false) {
       readToggle.textContent = "Read";
       readToggle.style.backgroundColor = "green";
-      read = true;
+      book.read = true;
     }
   });
 
