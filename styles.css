@@ -10,12 +10,21 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: "robotoregular";
+  src: url("./fonts/roboto-regular-webfont.woff2") format("woff2"),
+    url("./fonts/roboto-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 4fr 1fr;
   min-height: 100vh;
   max-height: fit-content;
+  font-family: "robotoregular", Courier;
 }
 
 /* header */
