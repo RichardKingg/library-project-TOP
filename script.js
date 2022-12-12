@@ -62,11 +62,27 @@ function createNewBook(book) {
 
   if (read === true) {
     readToggle.textContent = "Read";
-    readToggle.style.backgroundColor = "green";
+    readToggle.style.backgroundColor = "#90EE90";
   } else if (read === false) {
     readToggle.textContent = "Not read";
-    readToggle.style.backgroundColor = "red";
+    readToggle.style.backgroundColor = "#a26cff";
   }
+  //#73bd73
+  readToggle.addEventListener("mouseover", function () {
+    if (readToggle.textContent === "Read") {
+      readToggle.style.backgroundColor = "#73bd73";
+    } else if (readToggle.textContent === "Not read") {
+      readToggle.style.backgroundColor = "#885bd5";
+    }
+  });
+
+  readToggle.addEventListener("mouseout", function () {
+    if (readToggle.textContent === "Read") {
+      readToggle.style.backgroundColor = "#90EE90";
+    } else if (readToggle.textContent === "Not read") {
+      readToggle.style.backgroundColor = "#a26cff";
+    }
+  });
 
   //removes object from myLibrary array and removes bookDiv from library container
   remove.addEventListener("click", function () {
@@ -79,11 +95,11 @@ function createNewBook(book) {
   readToggle.addEventListener("click", function () {
     if (book.read === true) {
       readToggle.textContent = "Not read";
-      readToggle.style.backgroundColor = "red";
+      readToggle.style.backgroundColor = "#a26cff";
       book.read = false;
     } else if (book.read === false) {
       readToggle.textContent = "Read";
-      readToggle.style.backgroundColor = "green";
+      readToggle.style.backgroundColor = "#90EE90";
       book.read = true;
     }
   });

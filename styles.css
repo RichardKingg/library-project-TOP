@@ -1,6 +1,8 @@
 :root {
   --main-color: #dfdfdf;
+  --shadow: #a4a4a4;
   --secondary-color: #a26cff;
+  --tertiary-color: #885bd5;
   --white: #ffffff;
   --black: #000000;
 }
@@ -34,6 +36,8 @@ header {
   justify-content: center;
   align-items: center;
   background-color: var(--main-color);
+  box-shadow: 1px 1px 2px 2px var(--shadow);
+  margin-bottom: 10px;
 }
 
 /* Content container */
@@ -58,9 +62,10 @@ header {
 
 .bookDiv {
   display: flex;
+  gap: 10px;
   flex-direction: column;
-  border: 1px solid var(--black);
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 4px 4px var(--shadow);
   max-width: 250px;
   min-width: 100px;
   height: fit-content;
@@ -73,13 +78,38 @@ header {
   align-items: center;
   justify-content: center;
   align-self: center;
+  padding: 5px 50px;
+  border: none;
+  border-radius: 5px;
+}
+
+.readToggle:hover {
+  cursor: pointer;
+}
+
+.removeBtn {
+  background-color: var(--main-color);
+}
+
+.removeBtn:hover {
+  cursor: pointer;
+  background-color: var(--shadow);
 }
 
 .addBook {
+  font-size: 15px;
+  border-radius: 10px;
   width: 100px;
   height: 50px;
   margin-top: 5px;
   margin-bottom: 15px;
+  border: none;
+  background-color: var(--secondary-color);
+}
+
+.addBook:hover {
+  cursor: pointer;
+  background-color: var(--tertiary-color);
 }
 
 /* footer */
@@ -90,4 +120,5 @@ footer {
   justify-content: center;
   align-items: center;
   background-color: var(--main-color);
+  box-shadow: 3px 3px 6px 6px var(--shadow);
 }
