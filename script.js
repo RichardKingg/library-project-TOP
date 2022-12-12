@@ -68,6 +68,14 @@ function createNewBook(book) {
     readToggle.style.backgroundColor = "red";
   }
 
+  //removes object from myLibrary array and removes bookDiv from library container
+  remove.addEventListener("click", function () {
+    let bookIndex = myLibrary.findIndex((b) => b.title === book.title);
+    myLibrary.splice(bookIndex, 1);
+    libraryContainer.removeChild(bookDiv);
+  });
+
+  //changes read status
   readToggle.addEventListener("click", function () {
     if (book.read === true) {
       readToggle.textContent = "Not read";
