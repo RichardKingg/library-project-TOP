@@ -56,8 +56,60 @@ header {
   padding-bottom: 20px;
 }
 
-.newBookInput {
+.active {
+  background-color: var(--main-color);
+  border-radius: 10px;
+  padding: 15px;
+  position: absolute;
+  display: block;
+  right: 35%;
+  bottom: 40%;
+}
+
+.inactive {
   display: none;
+}
+
+.addBookForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.addBookForm > input {
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.addBookForm > input:focus {
+  outline: none;
+}
+
+.addBookForm > label {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.addBookForm > label:hover {
+  cursor: pointer;
+}
+
+#readCheck:hover {
+  cursor: pointer;
+}
+
+.addBookToLibrary {
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: var(--secondary-color);
+}
+
+.addBookToLibrary:hover {
+  cursor: pointer;
+  background-color: var(--tertiary-color);
 }
 
 .bookDiv {
@@ -81,6 +133,7 @@ header {
   padding: 5px 50px;
   border: none;
   border-radius: 5px;
+  width: 80%;
 }
 
 .readToggle:hover {

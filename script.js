@@ -28,6 +28,8 @@ function getUserBook() {
   }
   myLibrary.push((newUserBook = new Book(author, title, pages, read)));
   createNewBook(newUserBook);
+  newBookInput.classList.remove("active");
+  newBookInput.classList.add("inactive");
 }
 
 //Reset book input menu
@@ -67,7 +69,7 @@ function createNewBook(book) {
     readToggle.textContent = "Not read";
     readToggle.style.backgroundColor = "#a26cff";
   }
-  //#73bd73
+
   readToggle.addEventListener("mouseover", function () {
     if (readToggle.textContent === "Read") {
       readToggle.style.backgroundColor = "#73bd73";
@@ -114,8 +116,13 @@ function createNewBook(book) {
 
 //Show add new book menu
 function addBookInput() {
-  return (newBookInput.style.display = "block");
+  newBookInput.classList.remove("inactive");
+  newBookInput.classList.add("active");
 }
+
+window.addEventListener("load", function () {
+  newBookInput.classList.add("inactive");
+});
 
 //When +Add Book is clicked, show hidden menu for new book by user
 bookBtn.addEventListener("click", addBookInput);
