@@ -143,5 +143,10 @@ bookBtn.addEventListener("click", addBookInput);
 //When submit is clicked, add new book to library
 createBookCard.addEventListener("mousedown", getUserBook);
 
+createBookCard.addEventListener("click", function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+});
+
 //Resets inputs
 createBookCard.addEventListener("mouseup", resetInput);
