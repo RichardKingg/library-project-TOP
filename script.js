@@ -2,8 +2,9 @@ let bookBtn = document.querySelector(".addBook");
 let newBookInput = document.querySelector(".newBookInput");
 let createBookCard = document.querySelector(".addBookToLibrary");
 let libraryContainer = document.querySelector(".libraryContainer");
+let overlay = document.querySelector(".overlay");
 
-//Library array
+//Initialize variables
 let myLibrary = [];
 
 let newUserBook = "";
@@ -30,6 +31,8 @@ function getUserBook() {
   createNewBook(newUserBook);
   newBookInput.classList.remove("active");
   newBookInput.classList.add("inactive");
+  overlay.classList.remove("activeOver");
+  overlay.classList.add("inactiveOver");
 }
 
 //Reset book input menu
@@ -118,10 +121,20 @@ function createNewBook(book) {
 function addBookInput() {
   newBookInput.classList.remove("inactive");
   newBookInput.classList.add("active");
+  overlay.classList.remove("inactiveOver");
+  overlay.classList.add("activeOver");
 }
 
 window.addEventListener("load", function () {
   newBookInput.classList.add("inactive");
+  overlay.classList.add("inactiveOver");
+});
+
+overlay.addEventListener("click", function () {
+  newBookInput.classList.remove("active");
+  newBookInput.classList.add("inactive");
+  overlay.classList.remove("activeOver");
+  overlay.classList.add("inactiveOver");
 });
 
 //When +Add Book is clicked, show hidden menu for new book by user
