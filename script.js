@@ -3,6 +3,7 @@ let newBookInput = document.querySelector(".newBookInput");
 let createBookCard = document.querySelector(".addBookToLibrary");
 let libraryContainer = document.querySelector(".libraryContainer");
 let overlay = document.querySelector(".overlay");
+let bookForm = document.querySelector(".addBookForm");
 
 //Initialize variables
 let myLibrary = [];
@@ -29,6 +30,7 @@ function getUserBook() {
   }
   myLibrary.push((newUserBook = new Book(author, title, pages, read)));
   createNewBook(newUserBook);
+  bookForm.reset();
   newBookInput.classList.remove("active");
   newBookInput.classList.add("inactive");
   overlay.classList.remove("activeOver");
@@ -38,9 +40,6 @@ function getUserBook() {
 //Reset book input menu
 function resetInput() {
   newBookInput.style.display = "none";
-  let title = (document.querySelector(".title").value = "");
-  let author = (document.querySelector(".author").value = "");
-  let pages = (document.querySelector(".pages").value = "");
 }
 
 //Creates a new book and adds it to the library container
